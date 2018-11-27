@@ -23,7 +23,7 @@ class SecondController: UIViewController {
     }
 
     @IBAction func clickButton(_ sender: Any) {
-         _ = self.view.layer.transitionWithAnimType(animatonType: TransitionAnimType.suckEffect, subType: TransitionSubtypesFrom.ramdom, curve: TransitionCurve.ramdom, duration: 2)
+         _ = self.view.layer.transitionWithAnimType(animatonType: TransitionAnimType.suckEffect, subType: TransitionSubtypesFrom.random, curve: TransitionCurve.random, duration: 2)
         self.view.removeFromSuperview()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
             self.removeFromParent()

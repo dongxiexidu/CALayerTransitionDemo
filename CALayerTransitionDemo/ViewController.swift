@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(preventFlicker), for: UIControl.Event.allEvents)
     }
     @objc func removeViewAction() {
-        _ = self.view.layer.transitionWithAnimType(animatonType: TransitionAnimType.reveal, subType: TransitionSubtypesFrom.left, curve: TransitionCurve.ramdom, duration: 2)
+        _ = self.view.layer.transitionWithAnimType(animatonType: TransitionAnimType.reveal, subType: TransitionSubtypesFrom.left, curve: TransitionCurve.random, duration: 2)
         customView?.removeFromSuperview()
     }
 
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
     @IBAction func pushSecondController(_ sender: Any) {
 
-        _ = self.view.layer.transitionWithAnimType(animatonType: TransitionAnimType.rippleEffect, subType: TransitionSubtypesFrom.ramdom, curve: TransitionCurve.ramdom, duration: 2)
+        _ = self.view.layer.transitionWithAnimType(animatonType: TransitionAnimType.rippleEffect, subType: TransitionSubtypesFrom.random, curve: TransitionCurve.random, duration: 2)
         
         let custom = Bundle.main.loadNibNamed("CustormView", owner: self, options: nil)?.first as! UIView
         customView = custom
