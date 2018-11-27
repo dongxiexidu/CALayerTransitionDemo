@@ -25,7 +25,7 @@ public enum TransitionAnimType : Int {
     /// 合上书本
     case pageUnCurl
     /// 随机
-    case ramdom
+    case random
 }
 /// 动画方向
 public enum TransitionSubtypesFrom : Int{
@@ -38,7 +38,7 @@ public enum TransitionSubtypesFrom : Int{
     /// 从右
     case right
     /// 随机
-    case ramdom
+    case random
 }
 
 /// 动画曲线
@@ -54,7 +54,7 @@ public enum TransitionCurve : Int {
     /// 线性
     case linear
     /// 随机
-    case ramdom
+    case random
 }
 
 extension CALayer{
@@ -94,19 +94,19 @@ extension CALayer{
     /// 返回动画方向
     private func animationSubType(subType: TransitionSubtypesFrom) -> String {
         let animSubTypeArray = [CATransitionSubtype.fromTop, CATransitionSubtype.fromLeft,CATransitionSubtype.fromBottom,  CATransitionSubtype.fromRight]
-        return objFromArray(array: animSubTypeArray, index: subType.rawValue, isRandom: (TransitionSubtypesFrom.ramdom == subType)) as! String
+        return objFromArray(array: animSubTypeArray, index: subType.rawValue, isRandom: (TransitionSubtypesFrom.random == subType)) as! String
     }
     
     // 返回动画曲线
     private func animationCurve(curve : TransitionCurve) -> String{
         let animCurveArray = [CAMediaTimingFunctionName.default, CAMediaTimingFunctionName.easeIn, CAMediaTimingFunctionName.easeOut, CAMediaTimingFunctionName.easeInEaseOut, CAMediaTimingFunctionName.linear]
-        return objFromArray(array: animCurveArray, index: curve.rawValue, isRandom: (TransitionCurve.ramdom == curve)) as! String
+        return objFromArray(array: animCurveArray, index: curve.rawValue, isRandom: (TransitionCurve.random == curve)) as! String
     }
     
     private func animaTypeWithTransitionType(type: TransitionAnimType) -> String{
         let animArray = ["rippleEffect","suckEffect","pageCurl","oglFlip","cube","reveal","pageUnCurl"]
         
-        return self.objFromArray(array: animArray, index: type.rawValue, isRandom: type == TransitionAnimType.ramdom) as! String
+        return self.objFromArray(array: animArray, index: type.rawValue, isRandom: type == TransitionAnimType.random) as! String
     }
     
     // 统一从数据返回对象
